@@ -1,11 +1,11 @@
 # kickstart.nvim
 
 Merge conflict resolution
-'''
+```sh
 git pull git@github.com:nvim-lua/kickstart.nvim.git master
 # check if there are any merge conflicts
 # push
-'''
+```
 
 ## Introduction
 
