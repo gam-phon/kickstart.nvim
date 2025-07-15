@@ -29,21 +29,21 @@ return {
   --   end,
   -- },
   --
-  {
-    'CopilotC-Nvim/CopilotChat.nvim',
-    dependencies = {
-      { 'github/copilot.vim' }, -- or github/copilot.vim
-      -- { 'zbirenbaum/copilot.lua' }, -- or github/copilot.vim
-      { 'nvim-lua/plenary.nvim', branch = 'master' }, -- for curl, log wrapper
-    },
-    build = 'make tiktoken', -- Only on MacOS or Linux
-    opts = {
-      -- debug = true, -- Enable debugging
-      -- See Configuration section for rest
-      model = 'claude-3.5-sonnet', -- GPT model to use, 'gpt-3.5-turbo', 'gpt-4', or 'gpt-4o', 'o1-mini', 'o1-preview', 'claude-3.5-sonnet'
-      -- clear_chat_on_new_prompt = true,
-    },
-  },
+  -- {
+  --   'CopilotC-Nvim/CopilotChat.nvim',
+  --   dependencies = {
+  --     { 'github/copilot.vim' }, -- or github/copilot.vim
+  --     -- { 'zbirenbaum/copilot.lua' }, -- or github/copilot.vim
+  --     { 'nvim-lua/plenary.nvim', branch = 'master' }, -- for curl, log wrapper
+  --   },
+  --   build = 'make tiktoken', -- Only on MacOS or Linux
+  --   opts = {
+  --     -- debug = true, -- Enable debugging
+  --     -- See Configuration section for rest
+  --     model = 'claude-3.5-sonnet', -- GPT model to use, 'gpt-3.5-turbo', 'gpt-4', or 'gpt-4o', 'o1-mini', 'o1-preview', 'claude-3.5-sonnet'
+  --     -- clear_chat_on_new_prompt = true,
+  --   },
+  -- },
   -- {
   --   'yetone/avante.nvim',
   --   event = 'VeryLazy',
