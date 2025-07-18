@@ -227,11 +227,20 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
+-- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+-- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set('n', '<right>', '')
+-- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set('n', '<up>', '')
+-- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set('n', '<down>', '')
 
+-- TIP: Disable page up/down
+-- vim.keymap.set('n', '<PageUp>', '<cmd>echo "Use Ctrl b to move!!"<CR>')
+vim.keymap.set('n', '<PageUp>', '')
+-- vim.keymap.set('n', '<PageDown>', '<cmd>echo "Use Ctrl f to move!!"<CR>')
+vim.keymap.set('n', '<PageDown>', '')
 -- Disable arrow keys
 -- vim.keymap.set({ 'n', 'i', 'v' }, '<Up>', '<Nop>', { silent = true })
 -- vim.keymap.set({ 'n', 'i', 'v' }, '<Down>', '<Nop>', { silent = true })
@@ -840,7 +849,7 @@ require('lazy').setup({
               disableOrganizeImports = true,
               analysis = {
                 -- Ignore all files for analysis to exclusively use Ruff for linting
-                -- ignore = { '*' },
+                ignore = { '*' },
                 autoSearchPaths = true,
                 diagnosticMode = 'openFilesOnly',
                 useLibraryCodeForTypes = true,
