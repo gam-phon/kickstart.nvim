@@ -8,6 +8,31 @@ return {
     end,
     --
   },
+  {
+    'olimorris/codecompanion.nvim',
+    opts = {
+      strategies = {
+        chat = {
+          adapter = {
+            name = 'copilot',
+            model = 'claude-sonnet-4',
+          },
+        },
+      },
+      display = {
+        chat = {
+          start_in_insert_mode = true, -- Open the chat buffer in insert mode?
+        },
+      },
+    },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+    },
+    init = function()
+      vim.keymap.set('n', '<leader>cc', ':CodeCompanionChat Toggle<CR>')
+    end,
+  },
   --
   -- {
   --   'zbirenbaum/copilot.lua',
