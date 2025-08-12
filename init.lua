@@ -881,7 +881,25 @@ require('lazy').setup({
         -- npm install -g typescript typescript-language-server
         ts_ls = {},
         harper_ls = {
-          -- userDictPath = '~/dict.txt',
+          userDictPath = '~/.config/harper-ls/dictionary.txt',
+          -- linters = {
+          --   spell_check = true,
+          --   spelled_numbers = false,
+          --   an_a = true,
+          --   sentence_capitalization = true,
+          --   unclosed_quotes = true,
+          --   wrong_quotes = false,
+          --   long_sentences = true,
+          --   repeated_words = true,
+          --   spaces = true,
+          --   matcher = true,
+          --   correct_number_suffix = true,
+          --   number_suffix_capitalization = true,
+          --   multiple_sequential_pronouns = true,
+          --   linking_verbs = false,
+          --   avoid_curses = true,
+          --   terminating_conjunctions = true,
+          -- },
         },
         -- ltex = {
         --   ltex = {
@@ -909,6 +927,15 @@ require('lazy').setup({
         'stylua', -- Used to format Lua code
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+      -- NOTE: this is where you can customize the lsp setup
+      -- here we use the default options to see the available fields.
+      require('lspconfig').nushell.setup {
+        cmd = { 'nu', '--lsp' },
+        filetypes = { 'nu' },
+        root_dir = require('lspconfig.util').find_git_ancestor,
+        single_file_support = true,
+      }
 
       require('mason-lspconfig').setup {
         ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
@@ -1172,7 +1199,6 @@ require('lazy').setup({
       dependencies = {
         -- Install official queries and filetype detection
         -- alternatively, see section "Install official queries only"
-        { 'nushell/tree-sitter-nu' },
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
